@@ -1,8 +1,19 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { getPosts } from '../../api/posts';
 
 const Post = () => {
   const navigate = useNavigate();
+
+  const { data, isLoading } = useQuery({
+    queryKey: ['posts'],
+    queryFn: () => getPosts(),
+  });
+
+  if (isLoading) return <div>Loading...</div>;
+
+  if (!data) return <div>No data...</div>;
 
   return (
     <div>
@@ -10,16 +21,13 @@ const Post = () => {
       <button onClick={() => navigate(-1)}>back</button>
 
       <div className="flex flex-col">
-        {Array(10)
-          .fill(0)
-          .map((_, idx) => {
-            const id = Math.round(Math.random() * 40);
-            return (
-              <Link key={idx} to={`/post/${id}`}>
-                {id}
-              </Link>
-            );
-          })}
+        {data.map(d => {
+          return (
+            <Link key={d.id} to={`/post/${d.id}`}>
+              {d.id}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
