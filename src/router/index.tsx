@@ -1,21 +1,19 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
-import Post from '../components/Post';
-import PostDetails from '../components/PostDetails';
-import Home from '../components/Home';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import PostDetails from 'src/components/PostDetails';
+import PostPage from 'src/pages/post';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/post',
-    element: <Post />,
-  },
-  {
-    path: '/post/:id',
-    element: <PostDetails />,
+    children: [
+      { index: true, element: <Navigate to="/post" replace /> },
+      { path: '/post', element: <PostPage /> },
+      {
+        path: '/post/:id',
+        element: <PostDetails />,
+      },
+    ],
   },
 ]);
 
