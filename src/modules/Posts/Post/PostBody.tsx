@@ -13,7 +13,7 @@ const PostBody = ({ id, title, summary }: Props) => {
   return (
     <section className="p-2">
       <h2
-        className="mb-1 cursor-pointer font-bold leading-5 hover:underline md:leading-6"
+        className="mb-1 inline-block cursor-pointer font-bold leading-5 hover:underline md:leading-6"
         onClick={handleNavigate}
       >
         {title}

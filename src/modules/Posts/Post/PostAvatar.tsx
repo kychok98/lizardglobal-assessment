@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatDate } from '../../utils';
+import { formatDate } from 'src/utils';
 
 interface Props extends Author, Pick<Post, 'publishDate'> {}
 
