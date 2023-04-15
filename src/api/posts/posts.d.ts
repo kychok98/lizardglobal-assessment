@@ -16,3 +16,12 @@ interface Post {
   summary: string;
   categories: Category[];
 }
+
+interface GetPostParams {
+  categories: string[];
+}
+
+interface GetPostRes {
+  posts: Post[];
+  count: number;
+}
