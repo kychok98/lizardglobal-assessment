@@ -23,6 +23,7 @@
   "rules": {
     "no-undef": "off",
     "no-unused-vars": "warn",
-    "prettier/prettier": "warn"
+    "prettier/prettier": "warn",
+    "tailwindcss/no-contradicting-classname": "warn"
   }
 }

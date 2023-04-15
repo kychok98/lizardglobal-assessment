@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  header {
+    @apply text-2xl;
+    @apply font-bold;
+    @apply m-2;
+  }
+  h1 {
+    @apply text-lg;
+  }
+  h2 {
+    @apply text-base;
+  }
+  h3 {
+    @apply text-base;
+  }
+  h4 {
+    @apply text-sm;
+  }
+  h5 {
+    @apply text-xs;
+  }
+
+  @media screen(md) {
+    header {
+      @apply text-3xl;
+    }
+    h1 {
+      @apply text-xl;
+    }
+    h2 {
+      @apply text-lg;
+    }
+    h3 {
+      @apply text-base;
+    }
+    h4 {
+      @apply text-sm;
+    }
+    h5 {
+      @apply text-xs;
+    }
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,6 +53,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #d3dff7;
 }
 
 code {
