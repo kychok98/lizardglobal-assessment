@@ -21,6 +21,7 @@ const PostDetailPages = () => {
     // use client routing state if existed, else fallback from api
     if (location.state?.post) return location.state.post;
 
+    if (!data || Object.keys(data).length === 0) return;
     return data;
   }, [data, location.state]);
 
@@ -31,7 +32,7 @@ const PostDetailPages = () => {
     return navigate(-1);
   };
 
-  if (isInitialLoading) return <SkeletonPostDetails />;
+  if (isInitialLoading || !post) return <SkeletonPostDetails />;
 
   return (
     <div className="relative rounded bg-light-primary p-2 shadow">

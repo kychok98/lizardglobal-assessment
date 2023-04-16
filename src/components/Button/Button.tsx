@@ -17,23 +17,15 @@ const Button = ({
 }: Props) => {
   if (!showIf) return null;
 
-  const cls = (() => {
-    const _cls = `${className}`;
-
-    if (isLoading) {
-      return _cls.concat(`opacity-60 pointer-events-none`);
-    }
-
-    return _cls;
-  })();
-
   return (
     <button
-      className={`flex w-fit items-center rounded px-4 font-semibold text-primary hover:font-bold ${cls}`}
+      className={`flex w-fit items-center rounded px-4 font-semibold text-primary hover:font-bold ${className} ${
+        isLoading ? 'pointer-events-none opacity-60' : ''
+      }`}
       {...props}
     >
       {label || children}
-      <span>{isLoading && <CgSpinner className={`ml-1 animate-spin`} />}</span>
+      {isLoading && <CgSpinner className={`ml-1 animate-spin`} />}
     </button>
   );
 };

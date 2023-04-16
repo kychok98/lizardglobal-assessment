@@ -9,7 +9,7 @@ const PostPage = () => {
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 
     return (
-      <div className="absolute bottom-[100px] right-[40px]">
+      <div className="absolute bottom-[100px] right-[50px]">
         <Button
           className="fixed px-0 opacity-60 hover:opacity-100"
           onClick={handleBackToTop}

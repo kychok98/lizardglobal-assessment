@@ -46,6 +46,7 @@ const PostList = () => {
           showIf={hasNextPage}
           label={'Load More'}
           onClick={() => fetchNextPage()}
+          className="m-auto"
         />
       </section>
     </Fragment>
