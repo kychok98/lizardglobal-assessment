@@ -7,7 +7,7 @@ const PostBody = ({ id, title, summary }: Props) => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate({ pathname: `/post/${id}`, hash: 'back' });
+    navigate({ pathname: `/post/${id}` });
   };
 
   return (
