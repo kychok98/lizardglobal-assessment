@@ -4,7 +4,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { getPostById } from 'src/api/posts';
 import Button from 'src/components/Button';
 import Loading from 'src/components/Loading';
-import PostDetails from 'src/modules/PostDetails';
+import PostDetails from 'src/modules/Posts/PostDetails';
 
 const PostDetailPages = () => {
   const params = useParams();

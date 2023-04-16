@@ -32,10 +32,10 @@ const PostList = () => {
   return (
     <Fragment>
       {/* use for check pagination, for better aesthetic, can be removed */}
-      <span className="mb-1 ml-auto flex text-sm">
-        {data.pages.reduce((acc, { count }) => acc + count, 0)}/
+      <pre className="mb-1 ml-auto flex text-xs">
+        {data.pages.reduce((acc, { count }) => acc + count, 0)} out of{' '}
         {data.pages[0]?.totalCount} Post(s)
-      </span>
+      </pre>
 
       <section role="feed" className="flex flex-col gap-2 pb-2">
         {data.pages.map(page =>
