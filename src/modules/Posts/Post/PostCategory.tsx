@@ -1,7 +1,7 @@
 import React from 'react';
 import { getUniqueBy } from 'src/utils';
 
-interface Props extends Pick<Post, 'categories'> {}
+interface Props extends Pick<IPost, 'categories'> {}
 
 const PostCategory = ({ categories }: Props) => {
   return (

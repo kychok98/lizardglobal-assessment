@@ -1,7 +1,7 @@
 import React from 'react';
 import { formatDate } from 'src/utils';
 
-interface Props extends Author, Pick<Post, 'publishDate'> {}
+interface Props extends IAuthor, Pick<IPost, 'publishDate'> {}
 
 const PostAvatar = ({ name, avatar, publishDate }: Props) => {
   return (

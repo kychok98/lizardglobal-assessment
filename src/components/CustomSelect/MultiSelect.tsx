@@ -5,6 +5,10 @@ const MultiSelect = ({ ...props }: ReactSelectProps) => {
   return (
     <Select
       {...props}
+      styles={{
+        menu: styles => ({ ...styles, top: '80%' }),
+        indicatorsContainer: styles => ({ ...styles, cursor: 'pointer' }),
+      }}
       isMulti
       closeMenuOnSelect={false}
       blurInputOnSelect={false}

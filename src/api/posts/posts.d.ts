@@ -1,29 +1,29 @@
-interface Author {
+interface IAuthor {
   name: string;
   avatar: string;
 }
 
-interface Category {
+interface ICategory {
   id: string;
   name: string;
 }
 
-interface Post {
+interface IPost {
   id: string;
   title: string;
   publishDate: string;
-  author: Author;
+  author: IAuthor;
   summary: string;
-  categories: Category[];
+  categories: ICategory[];
 }
 
-interface GetPostParams {
+interface IGetPostParams {
   categories: string[];
   cursor: number;
 }
 
-interface GetPostRes {
-  posts: Post[];
+interface IGetPostRes {
+  posts: IPost[];
   count: number;
   totalCount: number;
   next: number | undefined;

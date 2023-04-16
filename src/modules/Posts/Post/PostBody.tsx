@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-interface Props extends Pick<Post, 'id' | 'title' | 'summary'> {}
+interface Props extends Pick<IPost, 'id' | 'title' | 'summary'> {}
 
 const PostBody = ({ id, title, summary }: Props) => {
   const navigate = useNavigate();

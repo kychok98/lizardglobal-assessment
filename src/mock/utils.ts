@@ -1,7 +1,7 @@
 export function filterPostsByCategory(
-  posts: Post[],
+  posts: IPost[],
   categories: string[] = []
-): Post[] {
+): IPost[] {
   if (!categories.length) return posts;
 
   return posts.filter(post =>

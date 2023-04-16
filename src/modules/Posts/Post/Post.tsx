@@ -3,7 +3,7 @@ import PostAvatar from './PostAvatar';
 import PostBody from './PostBody';
 import PostCategory from './PostCategory';
 
-interface Props extends Post {}
+interface Props extends IPost {}
 
 const Post = ({
   id,
