@@ -6,7 +6,7 @@ const MultiSelect = ({ ...props }: ReactSelectProps) => {
     <Select
       {...props}
       styles={{
-        menu: styles => ({ ...styles, top: '80%' }),
+        menu: styles => ({ ...styles, top: '80%', zIndex: 999 }),
         indicatorsContainer: styles => ({ ...styles, cursor: 'pointer' }),
       }}
       isMulti
