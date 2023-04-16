@@ -29,7 +29,7 @@ const Button = ({
 
   return (
     <button
-      className={`m-auto flex w-fit items-center rounded px-4 font-semibold text-primary hover:font-bold ${cls}`}
+      className={`flex w-fit items-center rounded px-4 font-semibold text-primary hover:font-bold ${cls}`}
       {...props}
     >
       {label || children}

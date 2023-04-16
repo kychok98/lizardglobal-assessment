@@ -3,9 +3,9 @@ import React, { Fragment, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getPosts } from 'src/api/posts';
 import Button from 'src/components/Button';
-import Loading from 'src/components/Loading';
 import useDebounce from 'src/hooks/useDebounce';
 import Post from './Post';
+import PostListSkeleton from './Skeletons/SkeletonPostList';
 
 const PostList = () => {
   const [searchParams] = useSearchParams();
@@ -25,7 +25,7 @@ const PostList = () => {
       getNextPageParam: lastPage => lastPage.next,
     });
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <PostListSkeleton />;
 
   if (!data?.pages.length) return <div>No data...</div>;
 

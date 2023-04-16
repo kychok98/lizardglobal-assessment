@@ -18,8 +18,10 @@ const PostCategory = ({ categories }: Props) => {
         return (
           <h5
             key={category.id}
-            className={`rounded border border-neutral-600 px-1.5 py-0.5 text-neutral-600 ${
-              selected ? 'bg-secondary font-semibold text-light-primary' : ''
+            className={`rounded border border-neutral-600 px-1.5 py-0.5 ${
+              selected
+                ? 'bg-secondary font-semibold text-gray-100'
+                : 'text-neutral-600'
             }`}
           >
             {category.name}

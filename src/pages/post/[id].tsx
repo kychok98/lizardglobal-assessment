@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { Fragment, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { getPostById } from 'src/api/posts';
 import Button from 'src/components/Button';
-import Loading from 'src/components/Loading';
 import PostDetails from 'src/modules/Posts/PostDetails';
+import SkeletonPostDetails from 'src/modules/Posts/Skeletons/SkeletonPostDetails';
 
 const PostDetailPages = () => {
   const params = useParams();
@@ -31,18 +31,12 @@ const PostDetailPages = () => {
     return navigate(-1);
   };
 
-  if (isInitialLoading) return <Loading cls="text-4xl" />;
+  if (isInitialLoading) return <SkeletonPostDetails />;
 
   return (
     <div className="relative rounded bg-light-primary p-2 shadow">
-      <Fragment>
-        <PostDetails {...post} />
-        <Button
-          className="m-0 ml-auto px-0 pr-1 pt-2"
-          label="Back"
-          onClick={handleBack}
-        />
-      </Fragment>
+      <PostDetails {...post} />
+      <Button className="ml-auto pr-1 pt-2" label="Back" onClick={handleBack} />
     </div>
   );
 };

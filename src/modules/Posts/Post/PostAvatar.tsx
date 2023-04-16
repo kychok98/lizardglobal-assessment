@@ -11,7 +11,7 @@ const PostAvatar = ({ name, avatar, publishDate }: Props) => {
         alt={`avatar ${name}`}
         className="w-[28px] rounded-3xl border border-primary md:w-[36px]"
       />
-      <span className="text-sm  md:text-base md:leading-7">{name}</span>
+      <span className="text-sm md:text-base md:leading-7">{name}</span>
       {publishDate && (
         <Fragment>
           <span className="h-0.5 w-0.5 rounded-full bg-gray-500" />
