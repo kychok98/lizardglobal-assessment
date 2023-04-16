@@ -1,21 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
-interface Props extends Pick<IPost, 'id' | 'title' | 'summary'> {}
+interface Props extends Pick<IPost, 'title' | 'summary'> {
+  onNavigate?: () => void;
+}
 
-const PostBody = ({ id, title, summary }: Props) => {
-  const navigate = useNavigate();
-
-  const handleNavigate = () => {
-    navigate({ pathname: `/post/${id}` });
-  };
-
+const PostBody = ({ title, summary, onNavigate }: Props) => {
   return (
     <section className="my-2">
       <h2
         title={title}
         className="inline-block w-full cursor-pointer truncate font-bold leading-5 hover:underline"
-        onClick={handleNavigate}
+        onClick={onNavigate}
       >
         {title}
       </h2>

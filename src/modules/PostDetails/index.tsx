@@ -1,20 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { getPostById } from 'src/api/posts';
+import { Post } from '../Posts';
 
-const PostDetails = () => {
-  const params = useParams();
+interface Props extends IPost {}
 
-  const { data } = useQuery({
-    queryKey: ['todos1'],
-    queryFn: () => getPostById(params.id as string),
-  });
-
+const PostDetails = (props: Props) => {
   return (
     <div className="flex flex-col">
-      <h1>This is the post details page</h1>
-      {JSON.stringify(data, null, 2)}
+      <Post {...props} />
     </div>
   );
 };
