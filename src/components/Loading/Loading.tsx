@@ -7,7 +7,7 @@ interface Props {
 
 const Loading = ({ cls }: Props) => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex h-full w-full items-center justify-center">
       <CgSpinner className={`animate-spin text-2xl ${cls}`} />
     </div>
   );

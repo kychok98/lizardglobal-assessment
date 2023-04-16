@@ -31,16 +31,19 @@ const PostDetailPages = () => {
     return navigate(-1);
   };
 
-  const renderPostDetails = () => {
-    if (isInitialLoading) return <Loading />;
-    return <PostDetails {...post} />;
-  };
+  if (isInitialLoading) return <Loading cls="text-4xl" />;
 
   return (
-    <Fragment>
-      {renderPostDetails()}
-      <Button label="Back" onClick={handleBack} />
-    </Fragment>
+    <div className="relative rounded bg-light-primary p-2 shadow">
+      <Fragment>
+        <PostDetails {...post} />
+        <Button
+          className="m-0 ml-auto px-0 pr-1 pt-2"
+          label="Back"
+          onClick={handleBack}
+        />
+      </Fragment>
+    </div>
   );
 };
 

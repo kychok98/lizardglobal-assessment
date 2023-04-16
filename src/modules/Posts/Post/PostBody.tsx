@@ -9,7 +9,7 @@ const PostBody = ({ title, summary, onNavigate }: Props) => {
     <section className="my-2">
       <h2
         title={title}
-        className="inline-block w-full cursor-pointer truncate font-bold leading-5 hover:underline"
+        className="inline-block w-full cursor-pointer truncate font-bold capitalize leading-5 hover:underline"
         onClick={onNavigate}
       >
         {title}
