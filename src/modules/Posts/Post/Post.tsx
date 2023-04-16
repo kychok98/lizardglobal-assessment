@@ -14,7 +14,7 @@ const Post = ({
   categories,
 }: Props) => {
   return (
-    <article className="rounded bg-light-primary p-2 shadow">
+    <article className="relative rounded bg-light-primary p-2 shadow">
       <PostAvatar {...author} publishDate={publishDate} />
       <PostBody id={id} title={title} summary={summary} />
       <PostCategory categories={categories} />

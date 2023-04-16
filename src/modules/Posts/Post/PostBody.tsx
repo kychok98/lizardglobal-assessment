@@ -11,14 +11,15 @@ const PostBody = ({ id, title, summary }: Props) => {
   };
 
   return (
-    <section className="p-2">
+    <section className="my-2">
       <h2
-        className="mb-1 inline-block cursor-pointer font-bold leading-5 hover:underline md:leading-6"
+        title={title}
+        className="inline-block w-full cursor-pointer truncate font-bold leading-5 hover:underline"
         onClick={handleNavigate}
       >
         {title}
       </h2>
-      <p className="text-gray-700">{summary}</p>
+      <p className="line-clamp-2 text-sm text-gray-700">{summary}</p>
     </section>
   );
 };

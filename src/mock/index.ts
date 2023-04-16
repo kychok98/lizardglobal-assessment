@@ -1,4 +1,6 @@
+// @ts-nocheck
 import { createServer } from 'miragejs';
+import { PAGE_SIZE } from './constants';
 
 import data from './data.json';
 import { filterPostsByCategory } from './utils';
@@ -11,11 +13,26 @@ createServer({
     this.timing = 1000;
 
     this.get('/posts', (_, req) => {
-      const categories =
-        (req.queryParams.categories as unknown as string[]) || [];
-      const posts = filterPostsByCategory(data.posts, categories);
+      const cursor = +req.queryParams.cursor || 0;
+      const categories = req.queryParams.categories as unknown as string[];
 
-      return { posts, count: posts.length };
+      const totalPosts = filterPostsByCategory(data.posts, categories || []);
+      const totalCount = totalPosts.length;
+
+      const [start, end] = (() => {
+        if (totalCount < PAGE_SIZE) return [0, PAGE_SIZE];
+        return [cursor * PAGE_SIZE, (cursor + 1) * PAGE_SIZE];
+      })();
+
+      const next = totalCount > end ? cursor + 1 : undefined;
+      const posts = totalPosts.slice(start, end);
+
+      return {
+        posts,
+        count: posts.length,
+        totalCount,
+        next,
+      };
     });
 
     this.get(`/posts/:id`, (_, req) => {

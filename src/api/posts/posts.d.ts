@@ -19,9 +19,12 @@ interface Post {
 
 interface GetPostParams {
   categories: string[];
+  cursor: number;
 }
 
 interface GetPostRes {
   posts: Post[];
   count: number;
+  totalCount: number;
+  next: number | undefined;
 }
