@@ -9,6 +9,7 @@ import './mock';
 
 // Include styles.
 import './styles/index.css';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 // Include application component.
 import App from './components/App';
